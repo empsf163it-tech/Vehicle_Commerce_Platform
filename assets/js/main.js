@@ -370,22 +370,52 @@ function initThemeToggle() {
 // 5. Mobile Drawer Menu Controller
 // --------------------------------------------------------------------------
 function initMobileMenu() {
-  const toggleBtn = document.querySelector(".mobile-toggle");
   const overlay = document.querySelector(".mobile-menu-overlay");
-  const closeBtn = document.querySelector(".mobile-drawer-close");
 
-  if (toggleBtn && overlay) {
-    toggleBtn.addEventListener("click", () => overlay.classList.add("active"));
+  function openMenu() {
+    if (overlay) {
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
   }
-  if (closeBtn && overlay) {
-    closeBtn.addEventListener("click", () => overlay.classList.remove("active"));
+
+  function closeMenu() {
+    if (overlay) {
+      overlay.classList.remove("active");
+      document.body.style.overflow = "";
+    }
   }
+
+  document.querySelectorAll(".mobile-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openMenu();
+    });
+  });
+
+  document.querySelectorAll(".mobile-drawer-close").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeMenu();
+    });
+  });
+
   if (overlay) {
     overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) overlay.classList.remove("active");
+      if (e.target === overlay) closeMenu();
     });
   }
+
+  // Global document click fallback handler
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".mobile-toggle")) {
+      openMenu();
+    } else if (e.target.closest(".mobile-drawer-close")) {
+      closeMenu();
+    }
+  });
 }
+
 
 // --------------------------------------------------------------------------
 // 6. Viewport 96-Point Inspection Progress Meter Animation
@@ -679,12 +709,62 @@ function setHeroStageTab(mode, btn) {
   }
 }
 
+
 // --------------------------------------------------------------------------
-// 10. Document Ready Initialization
+// 10. Password Visibility Eye Button Controller
+// --------------------------------------------------------------------------
+function initPasswordToggles() {
+  const eyeIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+  const eyeOffIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+
+  document.querySelectorAll(".password-toggle-btn").forEach(btn => {
+    if (!btn.innerHTML.trim()) btn.innerHTML = eyeIcon;
+    btn.addEventListener("click", () => {
+      const input = btn.previousElementSibling;
+      if (!input || input.tagName !== "INPUT") return;
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+      btn.innerHTML = isPassword ? eyeOffIcon : eyeIcon;
+    });
+  });
+}
+
+// --------------------------------------------------------------------------
+// 11. Active Page Navigation Link Highlighting (Mobile & Desktop)
+// --------------------------------------------------------------------------
+function initActiveNavLinks() {
+  let currentPath = window.location.pathname.split("/").pop() || "index.html";
+  if (currentPath === "" || currentPath === "/") currentPath = "index.html";
+
+  // Mobile Menu Links
+  document.querySelectorAll(".mobile-menu-links a").forEach(link => {
+    const href = link.getAttribute("href");
+    if (href && (href === currentPath || (currentPath === "index.html" && href === "./"))) {
+      link.classList.add("active");
+    } else if (href && !href.startsWith("http")) {
+      link.classList.remove("active");
+    }
+  });
+
+  // Desktop Menu Links
+  document.querySelectorAll(".menu a").forEach(link => {
+    const href = link.getAttribute("href");
+    if (href && (href === currentPath || (currentPath === "index.html" && href === "./"))) {
+      link.classList.add("active");
+    } else if (href && !href.startsWith("http")) {
+      link.classList.remove("active");
+    }
+  });
+}
+
+// --------------------------------------------------------------------------
+// 12. Document Ready Initialization
 // --------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
   initMobileMenu();
+  initActiveNavLinks();
+  initPasswordToggles();
   updateShortlistBadge();
   initInspectionAnimations();
   initFinanceCalculator();

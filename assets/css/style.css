@@ -378,9 +378,12 @@ header {
 }
 
 .mobile-menu-links a.active {
-  color: var(--red);
-  padding-left: 0;
-  border-left: none;
+  color: var(--red) !important;
+  background: rgba(217, 71, 50, 0.16);
+  border-left: 4px solid var(--red);
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-weight: 700;
 }
 
 .drawer-account-btn {
@@ -483,21 +486,22 @@ header {
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--red);
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 6px;
 }
 
 .eyebrow::before {
   content: "";
   display: inline-block;
-  width: 14px;
-  height: 2px;
+  width: 16px;
+  height: 3px;
   background: var(--red);
 }
 
@@ -1046,10 +1050,10 @@ header {
 
 .inspection-score-pill {
   font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.12);
-  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.16);
+  padding: 4px 10px;
   border-radius: 2px;
   color: var(--ink);
   white-space: nowrap;
@@ -1057,8 +1061,9 @@ header {
 
 .vehicle-specs-meta {
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-secondary);
   margin-bottom: 16px;
   display: flex;
   gap: 8px;
@@ -1076,15 +1081,16 @@ header {
 
 .vehicle-price {
   font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 20px;
   color: var(--ink);
 }
 
 .vehicle-finance-estimate {
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--muted);
+  font-size: 12px;
+  color: var(--ink-secondary);
+  font-weight: 500;
 }
 
 .vehicle-card-footer-action {
@@ -1093,7 +1099,7 @@ header {
   justify-content: space-between;
   margin-top: 14px;
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1399,10 +1405,77 @@ header {
   min-width: 820px;
 }
 
+.compare-selector-bar > div:first-child {
+  position: sticky;
+  left: 0;
+  background-color: #222220 !important;
+  border: 1.5px solid var(--line-strong) !important;
+  border-radius: 4px !important;
+  z-index: 6;
+  text-align: center !important;
+  font-family: var(--font-mono) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--red) !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  box-sizing: border-box !important;
+}
+
+.compare-selector-bar select,
+.compare-select-dropdown {
+  height: 50px !important;
+  box-sizing: border-box !important;
+  background-color: #222220 !important;
+  border: 1.5px solid var(--line-strong) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 0 40px 0 16px !important;
+  border-radius: 4px !important;
+  width: 100% !important;
+  cursor: pointer !important;
+  outline: none !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23D94732' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+}
+
+.compare-selector-bar select:hover,
+.compare-selector-bar select:focus,
+.compare-select-dropdown:hover,
+.compare-select-dropdown:focus {
+  border-color: var(--red) !important;
+  background-color: #2A2A27 !important;
+  box-shadow: 0 0 0 3px rgba(217, 71, 50, 0.3) !important;
+}
+
+.compare-selector-bar select option,
+.compare-select-dropdown option {
+  background-color: #1C1C1A !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 12px !important;
+}
+
 .compare-table {
   width: 100%;
   min-width: 820px;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-family: var(--font-mono);
   background: #151514;
   color: #F5F4F0;
@@ -1412,11 +1485,11 @@ header {
 .compare-table td {
   padding: 20px 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-  text-align: left;
+  text-align: center;
 }
 
 .compare-table th {
-  font-size: 12px;
+  font-size: 13px;
   font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
@@ -1427,14 +1500,26 @@ header {
   top: 0;
 }
 
+.compare-table th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 7;
+  background: #0A0A0A;
+  text-align: center !important;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.85);
+}
+
 .compare-table td:first-child {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 13px;
   color: #E2E0D6;
   width: 220px;
   position: sticky;
   left: 0;
   background: #151514;
-  z-index: 2;
+  z-index: 6;
+  text-align: center !important;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.85);
 }
 
 .compare-table td:not(:first-child) {
@@ -1442,6 +1527,7 @@ header {
   font-size: 20px;
   font-weight: 600;
   color: #F5F4F0;
+  text-align: center;
 }
 
 .highlight-metric {
@@ -2040,10 +2126,7 @@ footer {
   .responsive-grid-3 {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  
-  .responsive-grid-4 {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+
 
   .responsive-2col {
     grid-template-columns: 1fr !important;
@@ -2174,3 +2257,121 @@ footer {
     scroll-behavior: auto !important;
   }
 }
+
+/* Password Input Field Wrapper & Eye Toggle Button */
+.password-field-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-field-wrap input {
+  padding-right: 48px !important;
+  width: 100%;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #F5F4F0;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.15s ease;
+  z-index: 10;
+}
+
+.password-toggle-btn:hover {
+  color: var(--red);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.password-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  stroke: currentColor;
+}
+
+/* Our Info Page Component Enhancements */
+.hub-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.team-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--red);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+.faq-accordion {
+  background: #181816;
+  border: 1px solid var(--line-strong);
+  padding: 20px 24px;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.faq-accordion[open] {
+  border-color: var(--red);
+  background: #1D1D1B;
+}
+
+.faq-accordion summary {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: #FFFFFF;
+  outline: none;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-accordion summary::after {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--red);
+  transition: transform 0.2s ease;
+}
+
+.faq-accordion[open] summary::after {
+  content: "−";
+  transform: rotate(180deg);
+}
+
