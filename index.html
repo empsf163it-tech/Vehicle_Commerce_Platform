@@ -57,42 +57,105 @@
 
   <main class="page-wrapper">
     <!-- Automotive Hero -->
+    <!-- Automotive Hero (Information Layered OVER Top of Car Graphic) -->
     <section class="hero">
-      <div class="container hero-copy">
-        <div class="eyebrow">INSPECTED PRE-OWNED VEHICLE PLATFORM</div>
-        <h1>ENGINEERED<br><span>TRANSPARENCY.</span></h1>
-        <p class="lead">Discover verified pre-owned vehicles with complete 96-point inspection certificates, transparent specifications, financing calculators, and direct purchase reservation.</p>
+      <!-- Full-Width Background Automotive Stage (Car Visual + Laser Scan + Interactive Hotspots) -->
+      <div class="hero-car-stage">
+        <div class="hero-scan"></div>
+        
+        <div class="hero-car-backdrop">
+          <!-- Pulsing Interactive Diagnostic Hotspots over the car parts -->
+          <div class="car-hotspot" style="top: 36%; right: 42%;">
+            <div class="car-hotspot-tooltip">ENGINE & ECU AUDIT · 18/18 CHECKED</div>
+          </div>
+          <div class="car-hotspot" style="top: 72%; right: 54%;">
+            <div class="car-hotspot-tooltip">FRONT BRAKING & SUSPENSION · 12/12 CHECKED</div>
+          </div>
+          <div class="car-hotspot" style="top: 72%; right: 18%;">
+            <div class="car-hotspot-tooltip">REAR DIFFERENTIAL & TYRES · 12/12 CHECKED</div>
+          </div>
+          <div class="car-hotspot" style="top: 28%; right: 28%;">
+            <div class="car-hotspot-tooltip">FRAME INTEGRITY & ALIGNMENT · 16/16 CHECKED</div>
+          </div>
+
+          <!-- SVG High-Detail Dark Automotive Contour Graphic -->
+          <svg viewBox="0 0 780 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg-car-full">
+            <defs>
+              <linearGradient id="carBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4A4A45"/>
+                <stop offset="45%" stop-color="#1A1A18"/>
+                <stop offset="100%" stop-color="#080808"/>
+              </linearGradient>
+              <linearGradient id="carGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#D94732" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#111111" stop-opacity="0.9"/>
+              </linearGradient>
+              <filter id="carGlow" x="-20%" y="-20%" width="140%" height="150%">
+                <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#D94732" flood-opacity="0.25"/>
+                <feDropShadow dx="0" dy="30" stdDeviation="40" flood-color="#000000" flood-opacity="0.85"/>
+              </filter>
+            </defs>
+            <g filter="url(#carGlow)">
+              <!-- Sleek Automotive Body Silhouette -->
+              <path d="M 60,210 Q 90,120 210,105 L 330,55 Q 430,48 560,98 L 680,135 Q 730,160 720,210 Z" fill="url(#carBodyGrad)"/>
+              <path d="M 220,105 L 335,60 Q 425,52 530,98 L 590,130 L 220,130 Z" fill="url(#carGlassGrad)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+              <!-- Glowing Red Motorsport Side Accent Belt Line -->
+              <path d="M 60,190 L 715,190" stroke="#D94732" stroke-width="4" stroke-linecap="round"/>
+              <!-- Wheels -->
+              <circle cx="180" cy="210" r="48" fill="#080808" stroke="#444440" stroke-width="6"/>
+              <circle cx="180" cy="210" r="28" fill="#1C1C1A" stroke="#777" stroke-width="2"/>
+              <circle cx="180" cy="210" r="10" fill="#D94732"/>
+              <circle cx="590" cy="210" r="48" fill="#080808" stroke="#444440" stroke-width="6"/>
+              <circle cx="590" cy="210" r="28" fill="#1C1C1A" stroke="#777" stroke-width="2"/>
+              <circle cx="590" cy="210" r="10" fill="#D94732"/>
+              <!-- LED Headlight / Taillight Glow lines -->
+              <path d="M 70,185 L 110,185" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 8px #FFF)"/>
+              <path d="M 705,175 L 720,195" stroke="#D94732" stroke-width="5" stroke-linecap="round" filter="drop-shadow(0 0 10px #D94732)"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Floating Telemetry Card Over Car Top-Right -->
+        <div class="hero-stage-card-floating">
+          <div class="card-row">
+            <span>Audit Status</span>
+            <strong style="color:#10B981">PASSED (96/96)</strong>
+          </div>
+          <div class="card-row">
+            <span>Inspection Bay</span>
+            <strong>AUTORA BOM-01</strong>
+          </div>
+          <div class="card-row">
+            <span>Laser Alignment</span>
+            <strong style="color:var(--red)">0.00° TOLERANCE</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Information Overlay Section (Layered OVER Top of the Car Visual) -->
+      <div class="container hero-copy-overlay">
+        <div class="hero-badge-row">
+          <div class="hero-live-badge">
+            <span class="hero-pulse-dot"></span>
+            <span>AUTORA PLATFORM · 96-POINT DIAGNOSTIC CERTIFIED</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title-overlay">ENGINEERED<br><span>TRANSPARENCY.</span></h1>
+        
+        <p class="lead-overlay">Discover verified pre-owned vehicles with complete 96-point inspection certificates, transparent specifications, financing calculators, and direct purchase reservation.</p>
+
+        <!-- Feature Chips Layered Over Car -->
+        <div class="hero-feature-tags">
+          <span class="hero-tag">✓ 96-POINT AUDIT CERTIFIED</span>
+          <span class="hero-tag">⚡ 7-DAY MONEY-BACK</span>
+          <span class="hero-tag">🛡️ 12-MONTH WARRANTY</span>
+          <span class="hero-tag">0% HIDDEN FEES</span>
+        </div>
+
         <div class="hero-actions">
           <a class="btn primary" href="vehicles.html">Browse Vehicles →</a>
           <a class="btn secondary dark-btn" href="compare.html">Compare Cars</a>
-        </div>
-      </div>
-      <div class="hero-car">
-        <div class="hero-scan"></div>
-        <div class="hero-car-graphic">
-          <svg viewBox="0 0 520 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg-car">
-            <defs>
-              <linearGradient id="heroBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#555550"/>
-                <stop offset="60%" stop-color="#1A1A18"/>
-                <stop offset="100%" stop-color="#0A0A0A"/>
-              </linearGradient>
-              <filter id="heroShadow" x="-10%" y="-10%" width="120%" height="140%">
-                <feDropShadow dx="0" dy="25" stdDeviation="15" flood-color="#000000" flood-opacity="0.7"/>
-              </filter>
-            </defs>
-            <g filter="url(#heroShadow)">
-              <path d="M 45,145 Q 65,85 140,75 L 220,42 Q 290,38 370,72 L 455,98 Q 485,115 475,145 Z" fill="url(#heroBodyGrad)"/>
-              <path d="M 150,75 L 225,45 Q 285,40 350,72 L 390,92 L 150,92 Z" fill="#718096" fill-opacity="0.4" stroke="#444" stroke-width="1.5"/>
-              <path d="M 45,130 L 472,130" stroke="#D94732" stroke-width="4" stroke-linecap="round"/>
-              <circle cx="125" cy="145" r="34" fill="#0A0A0A" stroke="#555" stroke-width="4"/>
-              <circle cx="125" cy="145" r="20" fill="#222" stroke="#888" stroke-width="2"/>
-              <circle cx="125" cy="145" r="8" fill="#D94732"/>
-              <circle cx="395" cy="145" r="34" fill="#0A0A0A" stroke="#555" stroke-width="4"/>
-              <circle cx="395" cy="145" r="20" fill="#222" stroke="#888" stroke-width="2"/>
-              <circle cx="395" cy="145" r="8" fill="#D94732"/>
-            </g>
-          </svg>
         </div>
       </div>
     </section>

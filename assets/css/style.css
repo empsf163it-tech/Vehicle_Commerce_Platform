@@ -523,28 +523,30 @@ header {
 }
 
 /* --------------------------------------------------------------------------
-   Homepage — Hero Section
+   Homepage — Cinematic Full-Width Overlay Hero (Information OVER Car)
    -------------------------------------------------------------------------- */
 .hero {
   min-height: calc(100vh - 72px);
   position: relative;
-  display: grid;
+  display: flex;
   align-items: center;
   overflow: hidden;
-  background: #111111;
+  background: radial-gradient(circle at 70% 50%, #20201D 0%, #141413 50%, #0C0C0B 100%);
   color: #F5F4F0;
+  padding: 80px 0 90px;
 }
 
-.hero-car {
+.hero-car-stage {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #252522 0%, #111110 50%, #2D2D29 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-scan {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(217, 71, 50, 0.28) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(217, 71, 50, 0.25) 50%, transparent 100%);
   transform: translateX(-100%);
   animation: laserScan 6s ease-in-out infinite;
   pointer-events: none;
@@ -552,71 +554,229 @@ header {
 
 @keyframes laserScan {
   0% { transform: translateX(-100%); }
-  40%, 100% { transform: translateX(100%); }
+  45%, 100% { transform: translateX(100%); }
 }
 
-.hero-car-graphic {
+.hero-car-backdrop {
   position: absolute;
-  right: 5%;
-  bottom: 10%;
-  width: min(760px, 60vw);
-  height: 300px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  right: -4%;
+  bottom: 4%;
+  width: min(1050px, 75vw);
+  height: auto;
+  pointer-events: auto;
 }
 
-.hero-svg-car {
+.hero-svg-car-full {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.7));
-  animation: carDriveIn 1.2s var(--ease-mechanical) both;
+  opacity: 0.88;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.95));
+  animation: carFadeIn 1.2s var(--ease-mechanical) both;
 }
 
-@keyframes carDriveIn {
+@keyframes carFadeIn {
   from {
-    transform: translateX(120px);
+    transform: translateX(100px);
     opacity: 0;
   }
   to {
     transform: translateX(0);
-    opacity: 1;
+    opacity: 0.88;
   }
 }
 
-.hero-copy {
+/* Pulsing Hotspots on Vehicle Backdrop */
+.car-hotspot {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(217, 71, 50, 0.92);
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
+  z-index: 6;
+  transform: translate(-50%, -50%);
+  animation: hotspotPulse 2s infinite;
+  transition: transform 0.25s ease;
+  box-shadow: 0 0 15px rgba(217, 71, 50, 0.6);
+}
+
+.car-hotspot:hover {
+  transform: translate(-50%, -50%) scale(1.35);
+  background: #FFFFFF;
+}
+
+.car-hotspot-tooltip {
+  position: absolute;
+  bottom: 135%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(14, 14, 13, 0.96);
+  border: 1px solid var(--red);
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ink);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  border-radius: 2px;
+}
+
+.car-hotspot:hover .car-hotspot-tooltip {
+  opacity: 1;
+}
+
+@keyframes hotspotPulse {
+  0% { box-shadow: 0 0 0 0 rgba(217, 71, 50, 0.85); }
+  70% { box-shadow: 0 0 0 14px rgba(217, 71, 50, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 71, 50, 0); }
+}
+
+/* Floating Telemetry Stats Card Over Car */
+.hero-stage-card-floating {
+  position: absolute;
+  top: 10%;
+  right: 6%;
+  background: rgba(18, 18, 16, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 16px 20px;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 220px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  animation: floatCard 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatCard {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+
+.hero-stage-card-floating .card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.hero-stage-card-floating .card-row span {
+  color: var(--muted);
+}
+
+.hero-stage-card-floating .card-row strong {
+  color: var(--ink);
+}
+
+/* Information Overlay (Layered OVER Top of Car) */
+.hero-copy-overlay {
   position: relative;
-  z-index: 2;
-  padding: 80px 0;
-  max-width: 620px;
+  z-index: 10;
+  max-width: 780px;
 }
 
-.hero .eyebrow {
-  color: #C2C0B5;
+.hero-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-.hero h1 {
+.hero-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: rgba(14, 14, 13, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--ink);
+  border-radius: 2px;
+}
+
+.hero-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #10B981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10B981;
+  animation: pulseGreen 1.8s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.hero-title-overlay {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(32px, 8.5vw, 120px);
-  line-height: 0.88;
+  font-size: clamp(40px, 6.2vw, 86px);
+  line-height: 0.95;
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  margin: 20px 0;
-  color: #F5F4F0;
-  word-break: break-word;
+  margin: 16px 0;
+  color: #FFFFFF;
+  word-break: normal;
+  overflow-wrap: normal;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 0, 0, 0.95);
 }
 
-.hero h1 span {
+.hero-title-overlay span {
   color: var(--red);
+  display: inline-block;
+  text-shadow: 0 4px 25px rgba(217, 71, 50, 0.45), 0 0 40px rgba(0, 0, 0, 0.95);
 }
 
-.hero .lead {
-  font-size: 15px;
+.lead-overlay {
+  font-size: 16px;
   color: #E2E0D6;
   line-height: 1.7;
-  max-width: 500px;
-  margin-bottom: 30px;
+  max-width: 560px;
+  margin-bottom: 26px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+}
+
+.hero-feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(18, 18, 16, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line-strong);
+  padding: 8px 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-tag:hover {
+  border-color: var(--red);
+  color: #FFFFFF;
+  background: var(--red-soft);
 }
 
 .hero-actions {
@@ -634,7 +794,7 @@ header {
    Compact Search & Filter Module
    -------------------------------------------------------------------------- */
 .search-module-wrapper {
-  margin-top: -50px;
+  margin-top: 30px;
   position: relative;
   z-index: 10;
 }
@@ -1755,53 +1915,79 @@ footer {
     display: flex;
     flex-direction: column;
     min-height: auto;
-    padding: 50px 0 30px;
+    padding: 40px 0 50px;
+    position: relative;
   }
 
-  .hero-copy {
-    order: 1;
+  .hero-car-stage {
     position: relative;
-    z-index: 2;
-    padding: 0 0 20px 0;
+    inset: auto;
+    width: 100%;
+    height: 220px;
+    margin: 20px 0;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-car-backdrop {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    height: 100%;
+    right: auto;
+    bottom: auto;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-svg-car-full {
+    opacity: 1 !important;
+    max-width: 480px !important;
+    width: 100% !important;
+  }
+
+  .hero-copy-overlay {
     max-width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 15px;
   }
 
-  .hero .eyebrow {
+  .hero-badge-row {
     justify-content: center;
   }
 
-  .hero .lead {
+  .lead-overlay {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .hero-actions {
+  .hero-feature-tags {
     justify-content: center;
   }
 
-  .hero-car {
-    order: 2;
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: auto;
+  .hero-actions {
+    justify-content: center;
+    margin-bottom: 15px;
   }
 
-  .hero-car-graphic {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    height: 200px;
-    margin-top: 10px;
+  .hero-title-overlay {
+    font-size: clamp(32px, 7vw, 56px);
+    margin: 12px 0;
   }
 
-  .hero h1 {
-    font-size: clamp(36px, 7vw, 68px);
+  .hero-stage-card-floating {
+    display: none;
+  }
+
+  .search-module-wrapper {
+    margin-top: 30px !important;
   }
   
   .search-grid {
@@ -1900,6 +2086,42 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .hero {
+    padding: 30px 0 40px !important;
+  }
+
+  .hero-car-stage {
+    height: 170px !important;
+    margin: 10px 0 20px !important;
+  }
+
+  .hero-title-overlay {
+    font-size: clamp(28px, 8vw, 40px) !important;
+    margin: 12px 0 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .lead-overlay {
+    font-size: 14px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+    height: 46px !important;
+  }
+
+  .search-module-wrapper {
+    margin-top: 24px !important;
+  }
+
   .responsive-grid-3,
   .responsive-grid-4 {
     grid-template-columns: 1fr !important;
@@ -1932,21 +2154,6 @@ footer {
   .footer-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
-  }
-
-  .hero h1 {
-    font-size: clamp(28px, 8vw, 42px) !important;
-    margin: 14px 0 !important;
-    letter-spacing: 0 !important;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
   }
 
   .compare-cta-banner {

@@ -621,7 +621,66 @@ function initNewsletter() {
 }
 
 // --------------------------------------------------------------------------
-// 9. Document Ready Initialization
+// 9. Interactive Desktop Hero Stage Tab Switcher
+// --------------------------------------------------------------------------
+function setHeroStageTab(mode, btn) {
+  const tabs = document.querySelectorAll(".hero-stage-tab");
+  tabs.forEach(t => t.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+
+  const metricsContainer = document.querySelector("#heroStageMetrics");
+  if (!metricsContainer) return;
+
+  if (mode === "diag") {
+    metricsContainer.innerHTML = `
+      <div class="hero-mini-stat">
+        <div class="val" style="color:var(--red)">96 / 96</div>
+        <div class="lbl">Audit Score</div>
+      </div>
+      <div class="hero-mini-stat">
+        <div class="val">120+</div>
+        <div class="lbl">Ready Vehicles</div>
+      </div>
+      <div class="hero-mini-stat">
+        <div class="val">0%</div>
+        <div class="lbl">Hidden Fees</div>
+      </div>
+    `;
+  } else if (mode === "spec") {
+    metricsContainer.innerHTML = `
+      <div class="hero-mini-stat">
+        <div class="val" style="color:var(--red)">340 HP</div>
+        <div class="lbl">Max Power</div>
+      </div>
+      <div class="hero-mini-stat">
+        <div class="val">4.2s</div>
+        <div class="lbl">0-100 Km/h</div>
+      </div>
+      <div class="hero-mini-stat">
+        <div class="val">Euro 6</div>
+        <div class="lbl">Emission Audit</div>
+      </div>
+    `;
+  } else if (mode === "live") {
+    metricsContainer.innerHTML = `
+      <div class="hero-mini-stat">
+        <div class="val" style="color:#10B981">LIVE</div>
+        <div class="lbl">4 Hubs Active</div>
+      </div>
+      <div class="hero-mini-stat">
+        <div class="val">24/7</div>
+        <div class="lbl">Inspection Booking</div>
+      </div>
+      <div class="hero-mini-stat">
+        <div class="val">7-DAY</div>
+        <div class="lbl">Return Guarantee</div>
+      </div>
+    `;
+  }
+}
+
+// --------------------------------------------------------------------------
+// 10. Document Ready Initialization
 // --------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
