@@ -1,1 +1,397 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Compare — AUTORA</title><link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/dark-mode.css"></head><body><header><div class="container nav"><a class="logo" href="index.html"><span class="mark"><span>A</span></span>AUTORA</a><nav class="menu"><a href="index.html">Home</a><a href="vehicles.html">Vehicles</a><a href="compare.html">Compare</a><a href="inspection.html">Inspect</a></nav><div class="actions"><a class="account" href="login.html">Account</a><a href="vehicles.html">Find a Car</a></div></div></header><main><section class="page-hero"><div class="container"><div class="eyebrow">Decision tool</div><h1>COMPARE<br>VEHICLES</h1></div></section><section class="section compare"><div class="container"><table><thead><tr><th>Specification</th><th>Urban GT</th><th>Executive X</th><th>Trail 4</th></tr></thead><tbody><tr><td>Price</td><td>₹18.90L</td><td>₹24.50L</td><td>₹29.80L</td></tr><tr><td>Year</td><td>2022</td><td>2021</td><td>2023</td></tr><tr><td>Mileage</td><td>32,400 KM</td><td>41,200 KM</td><td>19,800 KM</td></tr><tr><td>Power</td><td>248 HP</td><td>220 HP</td><td>280 HP</td></tr><tr><td>Fuel</td><td>Petrol</td><td>Petrol</td><td>Diesel</td></tr><tr><td>Inspection</td><td>96 / 96</td><td>94 / 96</td><td>96 / 96</td></tr></tbody></table></div></section></main><footer><div class="container footer-grid"><div><div class="footer-title">AUTORA</div><div class="footer-copy">A straightforward marketplace for inspected pre-owned vehicles, transparent specifications and confident purchasing.</div></div><div><div class="footer-title">Explore</div><div class="footer-links"><a href="vehicles.html">Vehicles</a><a href="compare.html">Compare</a><a href="inspection.html">Inspection</a></div></div><div><div class="footer-title">Buying</div><div class="footer-links"><a href="inspection.html">Reports</a><a href="vehicles.html">Financing</a><a href="vehicles.html">Dealer listings</a></div></div><div><div class="footer-title">Support</div><div class="footer-links"><a href="mailto:hello@autora.example">hello@autora.example</a><a href="tel:+910000000000">+91 00 0000 0000</a><span>Mon–Sat · 09–19</span></div></div></div><div class="container copyright"><span>© 2026 AUTORA</span><span>DRIVE WITH CONFIDENCE.</span></div></footer><script src="assets/js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compare Vehicles Matrix — AUTORA</title>
+  <meta name="description" content="Side-by-side technical comparison of pre-owned vehicles. Compare price, power, mileage, inspection score, warranty, and estimated monthly payments.">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <img src="assets/images/logo.png" alt="AUTORA Logo" class="logo-img">
+        AUTORA
+      </a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="compare.html" class="active">Compare</a>
+        <a href="inspection.html">Inspect</a>
+        <a href="ourinfo.html">Our Info</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="account-link" href="login.html">Account</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Open Mobile Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Slide-in Drawer -->
+  <div class="mobile-menu-overlay">
+    <div class="mobile-menu-drawer">
+      <div>
+        <div class="mobile-drawer-header">
+          <a class="logo" href="index.html">
+            <img src="assets/images/logo.png" alt="AUTORA Logo" class="logo-img">
+            AUTORA
+          </a>
+          <button class="mobile-drawer-close" style="font-size:24px;color:var(--muted)">&times;</button>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="index.html">Home <span>→</span></a>
+          <a href="vehicles.html">Vehicles <span>→</span></a>
+          <a href="compare.html" class="active">Compare <span>→</span></a>
+          <a href="inspection.html">Inspect <span>→</span></a>
+          <a href="ourinfo.html">Our Info <span>→</span></a>
+          <a href="login.html" class="drawer-account-btn">Account Sign In <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="page-wrapper container" style="padding-top:40px;padding-bottom:80px">
+    <!-- Page Header -->
+    <div style="border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:30px">
+      <div class="eyebrow">DECISION MATRIX</div>
+      <h1 style="font-family:var(--font-display);font-size: clamp(40px,6vw,72px);text-transform:uppercase;margin:10px 0;line-height:0.88">
+        VEHICLE COMPARISON
+      </h1>
+      <p style="color:var(--muted);font-size:14px;margin:0">Select up to 3 vehicles to compare specifications, audit scores, and monthly financing side-by-side.</p>
+    </div>
+
+    <!-- Comparison Table Container (Horizontal Scroll on Mobile & Tablet) -->
+    <div class="compare-container">
+      <div class="compare-selector-bar" id="selectorBar">
+        <div style="font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted)">
+          SELECT VEHICLES
+        </div>
+        <div>
+          <select id="slot0" class="form-group" style="height:44px;padding:0 12px;width:100%;font-family:var(--font-mono);font-size:11px"></select>
+        </div>
+        <div>
+          <select id="slot1" class="form-group" style="height:44px;padding:0 12px;width:100%;font-family:var(--font-mono);font-size:11px"></select>
+        </div>
+        <div>
+          <select id="slot2" class="form-group" style="height:44px;padding:0 12px;width:100%;font-family:var(--font-mono);font-size:11px"></select>
+        </div>
+      </div>
+
+      <table class="compare-table" id="compareMatrixTable">
+        <!-- Rendered dynamically via JS for winning metric highlighting -->
+      </table>
+    </div>
+
+    <!-- UNIQUE SECTION 1: Superiority & Trade-off Scorecard -->
+    <section style="margin-top:60px;background:var(--bg-card);border:1px solid var(--line-strong);padding:40px">
+      <div class="eyebrow">AUTOMATED MATRIX APPRAISAL</div>
+      <h2 style="font-family:var(--font-display);font-size:32px;text-transform:uppercase;margin:10px 0">VEHICLE SUPERIORITY & TRADE-OFF SCORECARD</h2>
+      <p style="font-size:13px;color:var(--muted);max-width:700px;margin-bottom:30px">
+        AI-weighted trade-off analysis comparing horsepower density, inspection score integrity, maintenance index, and resale value retention.
+      </p>
+
+      <div class="responsive-grid-3">
+        <!-- Metric Card 1 -->
+        <div style="background:#181816;border:1px solid var(--line-strong);border-top:3px solid var(--red);padding:24px">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--red);text-transform:uppercase">PERFORMANCE & POWER LEADER</div>
+          <div style="font-family:var(--font-display);font-size:24px;font-weight:700;margin:6px 0">RS COUPE (340 HP)</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:16px">+92 HP higher output than segment average. Superior power-to-weight ratio.</div>
+          <div style="background:var(--bg-card);padding:10px;font-family:var(--font-mono);font-size:11px;color:var(--ink)">
+            POWER SCORE: <span style="color:var(--red);font-weight:700">98 / 100</span>
+          </div>
+        </div>
+
+        <!-- Metric Card 2 -->
+        <div style="background:#181816;border:1px solid var(--line-strong);border-top:3px solid #10B981;padding:24px">
+          <div style="font-family:var(--font-mono);font-size:10px;color:#10B981;text-transform:uppercase">BEST VALUE & EFFICIENCY</div>
+          <div style="font-family:var(--font-display);font-size:24px;font-weight:700;margin:6px 0">URBAN GT (2.0 TURBO)</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:16px">Optimal balance between monthly EMI (₹30,500/mo) and 96/96 inspection score.</div>
+          <div style="background:var(--bg-card);padding:10px;font-family:var(--font-mono);font-size:11px;color:var(--ink)">
+            VALUE INDEX: <span style="color:#10B981;font-weight:700">96 / 100</span>
+          </div>
+        </div>
+
+        <!-- Metric Card 3 -->
+        <div style="background:#181816;border:1px solid var(--line-strong);border-top:3px solid #3B82F6;padding:24px">
+          <div style="font-family:var(--font-mono);font-size:10px;color:#3B82F6;text-transform:uppercase">SPACE & UTILITY CHAMPION</div>
+          <div style="font-family:var(--font-display);font-size:24px;font-weight:700;margin:6px 0">TRAIL 4 (650L BOOT)</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:16px">Highest ground clearance and largest cargo capacity among compared vehicles.</div>
+          <div style="background:var(--bg-card);padding:10px;font-family:var(--font-mono);font-size:11px;color:var(--ink)">
+            UTILITY SCORE: <span style="color:#3B82F6;font-weight:700">95 / 100</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIQUE SECTION 2: Doorstep Transit & Delivery Calculator -->
+    <section style="margin-top:40px;margin-bottom:60px;background:var(--bg-card);border:1px solid var(--line-strong);padding:40px">
+      <div class="eyebrow">DOORSTEP DELIVERY CALCULATOR</div>
+      <h2 style="font-family:var(--font-display);font-size:32px;text-transform:uppercase;margin:10px 0">HUB LOGISTICS & TRANSIT CALCULATOR</h2>
+      <p style="font-size:13px;color:var(--muted);max-width:700px;margin-bottom:30px">
+        Calculate insured enclosed container shipping costs and estimated transit duration from regional audit hubs to your delivery address.
+      </p>
+
+      <div class="responsive-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center">
+        <div style="background:#181816;border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:16px">
+          <div class="form-group">
+            <label>Origin Inspection Hub</label>
+            <select id="transitHubSelect" onchange="calculateTransitFee()">
+              <option value="mumbai">Mumbai Hub (BOM-01)</option>
+              <option value="delhi">Delhi NCR Hub (DEL-02)</option>
+              <option value="blr">Bengaluru Hub (BLR-03)</option>
+              <option value="pune">Pune Hub (PNE-04)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Destination City / Pincode</label>
+            <input type="text" id="transitDestInput" placeholder="e.g. Hyderabad, 500001" value="Hyderabad" oninput="calculateTransitFee()">
+          </div>
+        </div>
+
+        <div style="background:#181816;border:1px solid var(--line-strong);padding:28px">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--red);text-transform:uppercase">ESTIMATED TRANSIT COST</div>
+          <div id="transitFeeDisplay" style="font-family:var(--font-display);font-size:38px;font-weight:700;color:var(--ink);margin:6px 0">₹6,800</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6">
+            Includes fully insured enclosed flatbed carrier transit with real-time GPS tracking.
+          </div>
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px">
+            <span>TRANSIT TIMELINE:</span>
+            <span id="transitTimeDisplay" style="color:var(--red);font-weight:700">2 – 3 Business Days</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function calculateTransitFee() {
+      const hub = document.querySelector('#transitHubSelect').value;
+      const dest = (document.querySelector('#transitDestInput').value || '').toLowerCase();
+
+      let fee = 6500;
+      let days = "2 – 3 Business Days";
+
+      if (dest.includes('mumbai') || dest.includes('pune')) {
+        fee = hub === 'mumbai' || hub === 'pune' ? 2500 : 7200;
+        days = hub === 'mumbai' || hub === 'pune' ? "24 Hours (Express)" : "2 – 3 Days";
+      } else if (dest.includes('delhi') || dest.includes('gurugram')) {
+        fee = hub === 'delhi' ? 2500 : 9500;
+        days = hub === 'delhi' ? "24 Hours (Express)" : "3 – 4 Days";
+      }
+
+      document.querySelector('#transitFeeDisplay').textContent = `₹${fee.toLocaleString()}`;
+      document.querySelector('#transitTimeDisplay').textContent = days;
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- Newsletter Subscription Box -->
+      <div class="footer-newsletter-box">
+        <div>
+          <div class="footer-newsletter-title">SUBSCRIBE TO AUTORA ALERTS</div>
+          <div class="footer-newsletter-desc">Get instant notifications on newly listed pre-owned vehicles, price drops, and 96-point audit certificates.</div>
+        </div>
+        <form class="footer-newsletter-form">
+          <input type="email" class="footer-newsletter-input" placeholder="Enter your email address..." required>
+          <button type="submit" class="btn primary">Subscribe →</button>
+        </form>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand" style="display:flex;align-items:center;gap:10px;">
+            <img src="assets/images/logo.png" alt="AUTORA Logo" class="logo-img" style="height:30px;">
+            AUTORA
+          </div>
+          <div class="footer-copy">A technical marketplace for pre-owned vehicles. Built for precision, transparent inspection certifications, and direct purchasing.</div>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;margin-bottom:14px">Explore</div>
+          <div class="footer-links">
+            <a href="vehicles.html">Vehicles Inventory</a>
+            <a href="compare.html">Compare Matrix</a>
+            <a href="inspection.html">96-Point Inspection</a>
+            <a href="ourinfo.html">Our Info & Hubs</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;margin-bottom:14px">Social Logins & Account</div>
+          <div class="footer-links">
+            <a href="login.html" onclick="handleSocialAuth('Google'); return false;">Sign in with Google</a>
+            <a href="login.html" onclick="handleSocialAuth('Apple'); return false;">Sign in with Apple</a>
+            <a href="login.html" onclick="handleSocialAuth('LinkedIn'); return false;">Sign in with LinkedIn</a>
+            <a href="login.html">Account Sign In</a>
+            <a href="signup.html">Create Account</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;margin-bottom:14px">Support & Assistance</div>
+          <div class="footer-links">
+            <a href="mailto:support@autora.example">support@autora.example</a>
+            <a href="tel:+918001234567">+91 800 123 4567</a>
+            <span>Mon–Sat · 09:00 – 19:00 IST</span>
+            <a href="ourinfo.html" style="color:var(--red);margin-top:6px;font-weight:600">Contact Hub Specialists →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-bar">
+        <span>© 2026 AUTORA PLATFORM. DEMO LISTINGS.</span>
+        <a href="#" class="scroll-to-top" style="color:var(--ink);text-decoration:none;font-weight:600">↑ BACK TO TOP</a>
+        <span>FIND IT. CHECK IT. COMPARE IT. DRIVE IT.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let selectedIds = ["urban-gt", "executive-x", "trail-4"];
+
+      function populateSelects() {
+        [0, 1, 2].forEach(slotIdx => {
+          const select = document.querySelector("#slot" + slotIdx);
+          if (!select) return;
+          select.innerHTML = AUTORA_VEHICLES.map(v => 
+            `<option value="${v.id}" ${v.id === selectedIds[slotIdx] ? "selected" : ""}>${v.name} (${v.year})</option>`
+          ).join("");
+
+          select.onchange = (e) => {
+            selectedIds[slotIdx] = e.target.value;
+            renderMatrix();
+          };
+        });
+      }
+
+      function renderMatrix() {
+        const vehicles = selectedIds.map(id => AUTORA_VEHICLES.find(v => v.id === id) || AUTORA_VEHICLES[0]);
+        const table = document.querySelector("#compareMatrixTable");
+
+        // Helper to find winning index
+        function getBestIndex(key, mode = "lowest") {
+          let bestIdx = 0;
+          let bestVal = mode === "lowest" ? Infinity : -Infinity;
+          vehicles.forEach((v, idx) => {
+            let num = v[key];
+            if (key === "power") num = parseInt(v.power) || 0;
+            if (mode === "lowest" && num < bestVal) { bestVal = num; bestIdx = idx; }
+            if (mode === "highest" && num > bestVal) { bestVal = num; bestIdx = idx; }
+          });
+          return bestIdx;
+        }
+
+        const lowestPriceIdx = getBestIndex("price", "lowest");
+        const newestYearIdx = getBestIndex("year", "highest");
+        const lowestMileageIdx = getBestIndex("mileage", "lowest");
+        const highestPowerIdx = getBestIndex("power", "highest");
+        const highestScoreIdx = getBestIndex("inspectionScore", "highest");
+
+        table.innerHTML = `
+          <thead>
+            <tr>
+              <th>Specification Parameter</th>
+              ${vehicles.map(v => `
+                <th style="padding:15px">
+                  <div style="height:100px;overflow:hidden;border:1px solid var(--line-strong);margin-bottom:10px">
+                    <img src="${v.image}" alt="${v.name}" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80'">
+                  </div>
+                  ${v.name}<br><span style="font-size:10px;color:var(--muted);font-weight:normal">${v.typeLabel}</span>
+                </th>
+              `).join("")}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Price</td>
+              ${vehicles.map((v, i) => `<td class="${i === lowestPriceIdx ? "highlight-metric" : ""}">${v.priceDisplay} ${i === lowestPriceIdx ? "<span style='font-size:10px'>★ BEST</span>" : ""}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Model Year</td>
+              ${vehicles.map((v, i) => `<td class="${i === newestYearIdx ? "highlight-metric" : ""}">${v.year}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Odometer Mileage</td>
+              ${vehicles.map((v, i) => `<td class="${i === lowestMileageIdx ? "highlight-metric" : ""}">${v.mileage.toLocaleString()} KM</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Engine Displacement</td>
+              ${vehicles.map(v => `<td>${v.engine}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Horsepower Output</td>
+              ${vehicles.map((v, i) => `<td class="${i === highestPowerIdx ? "highlight-metric" : ""}">${v.power}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Fuel System</td>
+              ${vehicles.map(v => `<td>${v.fuel}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Transmission</td>
+              ${vehicles.map(v => `<td>${v.transmission}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Body Silhouette</td>
+              ${vehicles.map(v => `<td style="text-transform:uppercase">${v.bodyType}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Boot Luggage Space</td>
+              ${vehicles.map(v => `<td>${v.bootSpace}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>96-Point Audit Score</td>
+              ${vehicles.map((v, i) => `<td class="${i === highestScoreIdx ? "highlight-metric" : ""}">${v.inspectionScore} / ${v.inspectionMax}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Ownership Record</td>
+              ${vehicles.map(v => `<td>${v.ownership}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Certified Warranty</td>
+              ${vehicles.map(v => `<td>${v.warranty}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Est. Monthly EMI</td>
+              ${vehicles.map(v => `<td>${v.monthlyEmi}</td>`).join("")}
+            </tr>
+            <tr>
+              <td>Action</td>
+              ${vehicles.map(v => `
+                <td>
+                  <button class="btn primary" style="min-height:36px;padding:0 14px;font-size:10px" onclick="openPurchaseModal('${v.id}')">Select Vehicle</button>
+                </td>
+              `).join("")}
+            </tr>
+          </tbody>
+        `;
+      }
+
+      populateSelects();
+      renderMatrix();
+    });
+  </script>
+</body>
+</html>

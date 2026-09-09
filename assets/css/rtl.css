@@ -1,2 +1,43 @@
+/* ==========================================================================
+   AUTORA — RTL Stylesheet
+   ========================================================================== */
 
-html[dir="rtl"] .menu{direction:rtl}html[dir="rtl"] .meta,html[dir="rtl"] .sticky-inner{direction:rtl}
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] .menu {
+  direction: rtl;
+}
+
+html[dir="rtl"] .eyebrow::before {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .mobile-menu-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+  border-left: none;
+  border-right: 1px solid var(--line);
+}
+
+html[dir="rtl"] .mobile-menu-overlay.active .mobile-menu-drawer {
+  transform: translateX(0);
+}
+
+html[dir="rtl"] .card-red-bar {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .compare-table th,
+html[dir="rtl"] .compare-table td {
+  text-align: right;
+}
+
+html[dir="rtl"] .compare-table td:first-child {
+  right: 0;
+  left: auto;
+}

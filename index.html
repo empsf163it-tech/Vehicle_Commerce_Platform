@@ -1,7 +1,450 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Home — AUTORA</title><link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/dark-mode.css"></head><body><header><div class="container nav"><a class="logo" href="index.html"><span class="mark"><span>A</span></span>AUTORA</a><nav class="menu"><a href="index.html">Home</a><a href="vehicles.html">Vehicles</a><a href="compare.html">Compare</a><a href="inspection.html">Inspect</a></nav><div class="actions"><a class="account" href="login.html">Account</a><a href="vehicles.html">Find a Car</a></div></div></header><main><section class="hero"><div class="hero-car"><div class="scan"></div><div class="car-shape"></div></div><div class="container hero-copy"><div class="eyebrow reveal">INSPECTED PRE-OWNED VEHICLES</div><h1 class="reveal d1">DRIVE<br><span>SMART.</span></h1><p class="lead reveal d2">Discover inspected cars with transparent specifications, vehicle reports, financing options and trusted dealer listings.</p><div style="display:flex;gap:10px;margin-top:28px"><a class="btn primary" href="vehicles.html">Browse Vehicles →</a><a class="btn" href="compare.html">Compare Cars</a></div></div></section>
-<section class="section"><div class="container"><div class="section-head"><h2>Numbers<br>That Matter</h2></div><div class="stats"><div class="stat"><strong>120+</strong><span>Inspected Cars</span></div><div class="stat"><strong>96</strong><span>Inspection Points</span></div><div class="stat"><strong>7</strong><span>Day Return</span></div><div class="stat"><strong>0%</strong><span>Hidden Fees</span></div></div></div></section>
-<section class="section"><div class="container"><div class="section-head"><h2>Featured<br>Vehicles</h2><a class="link" href="vehicles.html">View Inventory →</a></div><div class="vehicle-grid">
-<a class="vehicle" href="vehicle.html"><div class="vehicle-image"><div class="mini-car"></div></div><div class="vehicle-body"><h3>Urban GT</h3><div class="meta"><span>2022 · 32,400 km</span><strong class="price">₹18.90L</strong></div></div></a>
-<a class="vehicle" href="vehicle.html"><div class="vehicle-image"><div class="mini-car"></div></div><div class="vehicle-body"><h3>Executive X</h3><div class="meta"><span>2021 · 41,200 km</span><strong class="price">₹24.50L</strong></div></div></a>
-<a class="vehicle" href="vehicle.html"><div class="vehicle-image"><div class="mini-car"></div></div><div class="vehicle-body"><h3>Trail 4</h3><div class="meta"><span>2023 · 19,800 km</span><strong class="price">₹29.80L</strong></div></div></a>
-</div></div></section></main><footer><div class="container footer-grid"><div><div class="footer-title">AUTORA</div><div class="footer-copy">A straightforward marketplace for inspected pre-owned vehicles, transparent specifications and confident purchasing.</div></div><div><div class="footer-title">Explore</div><div class="footer-links"><a href="vehicles.html">Vehicles</a><a href="compare.html">Compare</a><a href="inspection.html">Inspection</a></div></div><div><div class="footer-title">Buying</div><div class="footer-links"><a href="inspection.html">Reports</a><a href="vehicles.html">Financing</a><a href="vehicles.html">Dealer listings</a></div></div><div><div class="footer-title">Support</div><div class="footer-links"><a href="mailto:hello@autora.example">hello@autora.example</a><a href="tel:+910000000000">+91 00 0000 0000</a><span>Mon–Sat · 09–19</span></div></div></div><div class="container copyright"><span>© 2026 AUTORA</span><span>DRIVE WITH CONFIDENCE.</span></div></footer><script src="assets/js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AUTORA — Inspected Pre-Owned Vehicle Commerce</title>
+  <meta name="description" content="AUTORA is a technical pre-owned vehicle marketplace with transparent 96-point inspection reports, side-by-side comparison, and direct purchase flows.">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <img src="assets/images/logo.png" alt="AUTORA Logo" class="logo-img">
+        AUTORA
+      </a>
+      <nav class="menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="compare.html">Compare</a>
+        <a href="inspection.html">Inspect</a>
+        <a href="ourinfo.html">Our Info</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="account-link" href="login.html">Account</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Open Mobile Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Slide-in Drawer -->
+  <div class="mobile-menu-overlay">
+    <div class="mobile-menu-drawer">
+      <div>
+        <div class="mobile-drawer-header">
+          <a class="logo" href="index.html">
+            <img src="assets/images/logo.png" alt="AUTORA Logo" class="logo-img">
+            AUTORA
+          </a>
+          <button class="mobile-drawer-close" style="font-size:24px;color:var(--muted)">&times;</button>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="index.html" class="active">Home <span>→</span></a>
+          <a href="vehicles.html">Vehicles <span>→</span></a>
+          <a href="compare.html">Compare <span>→</span></a>
+          <a href="inspection.html">Inspect <span>→</span></a>
+          <a href="ourinfo.html">Our Info <span>→</span></a>
+          <a href="login.html" class="drawer-account-btn">Account Sign In <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="page-wrapper">
+    <!-- Automotive Hero -->
+    <section class="hero">
+      <div class="container hero-copy">
+        <div class="eyebrow">INSPECTED PRE-OWNED VEHICLE PLATFORM</div>
+        <h1>ENGINEERED<br><span>TRANSPARENCY.</span></h1>
+        <p class="lead">Discover verified pre-owned vehicles with complete 96-point inspection certificates, transparent specifications, financing calculators, and direct purchase reservation.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="vehicles.html">Browse Vehicles →</a>
+          <a class="btn secondary dark-btn" href="compare.html">Compare Cars</a>
+        </div>
+      </div>
+      <div class="hero-car">
+        <div class="hero-scan"></div>
+        <div class="hero-car-graphic">
+          <svg viewBox="0 0 520 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg-car">
+            <defs>
+              <linearGradient id="heroBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#555550"/>
+                <stop offset="60%" stop-color="#1A1A18"/>
+                <stop offset="100%" stop-color="#0A0A0A"/>
+              </linearGradient>
+              <filter id="heroShadow" x="-10%" y="-10%" width="120%" height="140%">
+                <feDropShadow dx="0" dy="25" stdDeviation="15" flood-color="#000000" flood-opacity="0.7"/>
+              </filter>
+            </defs>
+            <g filter="url(#heroShadow)">
+              <path d="M 45,145 Q 65,85 140,75 L 220,42 Q 290,38 370,72 L 455,98 Q 485,115 475,145 Z" fill="url(#heroBodyGrad)"/>
+              <path d="M 150,75 L 225,45 Q 285,40 350,72 L 390,92 L 150,92 Z" fill="#718096" fill-opacity="0.4" stroke="#444" stroke-width="1.5"/>
+              <path d="M 45,130 L 472,130" stroke="#D94732" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="125" cy="145" r="34" fill="#0A0A0A" stroke="#555" stroke-width="4"/>
+              <circle cx="125" cy="145" r="20" fill="#222" stroke="#888" stroke-width="2"/>
+              <circle cx="125" cy="145" r="8" fill="#D94732"/>
+              <circle cx="395" cy="145" r="34" fill="#0A0A0A" stroke="#555" stroke-width="4"/>
+              <circle cx="395" cy="145" r="20" fill="#222" stroke="#888" stroke-width="2"/>
+              <circle cx="395" cy="145" r="8" fill="#D94732"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compact Vehicle Search / Filter Module -->
+    <div class="container search-module-wrapper">
+      <div class="search-module">
+        <div class="search-module-title">
+          <span>FIND YOUR VEHICLE</span>
+          <span style="color:var(--red)">✓ 96-POINT VERIFIED</span>
+        </div>
+        <form action="vehicles.html" method="GET" class="search-grid">
+          <div class="form-group">
+            <label>Make / Brand</label>
+            <select name="make">
+              <option value="all">All Makes</option>
+              <option value="urban">AUTORA Performance</option>
+              <option value="executive">AUTORA Executive</option>
+              <option value="trail">AUTORA Trail</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Model</label>
+            <select name="model">
+              <option value="all">All Models</option>
+              <option value="gt">Urban GT</option>
+              <option value="exec">Executive X</option>
+              <option value="trail4">Trail 4</option>
+              <option value="coupe">RS Coupe</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Budget (Max)</label>
+            <select name="price">
+              <option value="all">Any Price</option>
+              <option value="2000000">Under ₹20 Lakh</option>
+              <option value="2500000">Under ₹25 Lakh</option>
+              <option value="3500000">Under ₹35 Lakh</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Year</label>
+            <select name="year">
+              <option value="all">Any Year</option>
+              <option value="2023">2023 & Newer</option>
+              <option value="2022">2022 & Newer</option>
+              <option value="2020">2020 & Newer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Body Type</label>
+            <select name="body">
+              <option value="all">All Body Types</option>
+              <option value="sedan">Sedan</option>
+              <option value="suv">SUV</option>
+              <option value="sport">Sport Coupe</option>
+            </select>
+          </div>
+          <div class="search-submit-wrap">
+            <button type="submit" class="btn primary input-height-btn" style="width:100%">Find My Car</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Key Stats Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">VERIFIED METRICS</div>
+            <h2>NUMBERS THAT<br>MATTER.</h2>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">120+</div>
+            <div class="stat-label">Inspected Vehicles</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">96/96</div>
+            <div class="stat-label">Inspection Points</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">7-DAY</div>
+            <div class="stat-label">Money Back Guarantee</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">0%</div>
+            <div class="stat-label">Hidden Dealer Fees</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Vehicles Section -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">CURATED INVENTORY</div>
+            <h2>FEATURED<br>VEHICLES</h2>
+          </div>
+          <a class="link-action" href="vehicles.html">View Full Inventory →</a>
+        </div>
+        <div class="vehicle-grid">
+          <!-- Card 1 -->
+          <div class="vehicle-card" onclick="location.href='vehicle.html?id=urban-gt'">
+            <div class="card-red-bar"></div>
+            <div class="vehicle-card-image-wrap">
+              <div class="verified-badge red" style="position:absolute;top:15px;left:15px">✓ 96/96 INSPECTED</div>
+              <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80" alt="Urban GT" class="vehicle-card-img" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80'">
+            </div>
+            <div class="vehicle-card-body">
+              <div class="vehicle-card-header">
+                <div>
+                  <h3 class="vehicle-title">Urban GT</h3>
+                  <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Sport Sedan · Mumbai</div>
+                </div>
+                <div class="inspection-score-pill">96 / 96</div>
+              </div>
+              <div class="vehicle-specs-meta">
+                <span>2022</span> · <span>32,400 KM</span> · <span>Petrol</span> · <span>Automatic</span>
+              </div>
+              <div class="vehicle-card-pricing">
+                <div class="vehicle-price">₹18.90L</div>
+                <div class="vehicle-finance-estimate">Est. ₹30,500/mo</div>
+              </div>
+              <div class="vehicle-card-footer-action">
+                <span>View Specification</span>
+                <span class="arrow-icon">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="vehicle-card" onclick="location.href='vehicle.html?id=executive-x'">
+            <div class="card-red-bar"></div>
+            <div class="vehicle-card-image-wrap">
+              <div class="verified-badge red" style="position:absolute;top:15px;left:15px">✓ 94/96 INSPECTED</div>
+              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80" alt="Executive X" class="vehicle-card-img" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80'">
+            </div>
+            <div class="vehicle-card-body">
+              <div class="vehicle-card-header">
+                <div>
+                  <h3 class="vehicle-title">Executive X</h3>
+                  <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">Luxury Sedan · Delhi</div>
+                </div>
+                <div class="inspection-score-pill">94 / 96</div>
+              </div>
+              <div class="vehicle-specs-meta">
+                <span>2021</span> · <span>41,200 KM</span> · <span>Petrol Hybrid</span> · <span>Automatic</span>
+              </div>
+              <div class="vehicle-card-pricing">
+                <div class="vehicle-price">₹24.50L</div>
+                <div class="vehicle-finance-estimate">Est. ₹39,800/mo</div>
+              </div>
+              <div class="vehicle-card-footer-action">
+                <span>View Specification</span>
+                <span class="arrow-icon">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="vehicle-card" onclick="location.href='vehicle.html?id=trail-4'">
+            <div class="card-red-bar"></div>
+            <div class="vehicle-card-image-wrap">
+              <div class="verified-badge red" style="position:absolute;top:15px;left:15px">✓ 96/96 INSPECTED</div>
+              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80" alt="Trail 4" class="vehicle-card-img" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80'">
+            </div>
+            <div class="vehicle-card-body">
+              <div class="vehicle-card-header">
+                <div>
+                  <h3 class="vehicle-title">Trail 4</h3>
+                  <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted)">All-Terrain SUV · Bengaluru</div>
+                </div>
+                <div class="inspection-score-pill">96 / 96</div>
+              </div>
+              <div class="vehicle-specs-meta">
+                <span>2023</span> · <span>19,800 KM</span> · <span>Diesel</span> · <span>Automatic</span>
+              </div>
+              <div class="vehicle-card-pricing">
+                <div class="vehicle-price">₹29.80L</div>
+                <div class="vehicle-finance-estimate">Est. ₹48,200/mo</div>
+              </div>
+              <div class="vehicle-card-footer-action">
+                <span>View Specification</span>
+                <span class="arrow-icon">→</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspection / Verification Section -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" style="color:#A8A69F">PRECISION AUDIT</div>
+            <h2 style="color:#F4F3EF">96-POINT VEHICLE<br>INSPECTION</h2>
+          </div>
+          <a class="link-action" href="inspection.html" style="color:#F4F3EF">Full Audit Process →</a>
+        </div>
+        <div class="inspection-overview" style="background:#1C1C1A;border-color:rgba(255,255,255,0.12)">
+          <div class="responsive-2col" style="gap:30px;align-items:center;border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:30px">
+            <div>
+              <span class="verified-badge red">✓ AUTORA STANDARD</span>
+              <h3 style="font-family:var(--font-display);font-size:clamp(22px, 4vw, 32px);text-transform:uppercase;margin:10px 0;color:#F4F3EF">MASTER MECHANIC DIAGNOSTICS</h3>
+              <p style="font-size:13px;color:#A8A69F;line-height:1.7">Our master technicians examine every vehicle using ECU scanners, paint depth gauges, compression testers, and underbody laser aligners.</p>
+            </div>
+            <div style="height:200px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,0.15)">
+              <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80" alt="Master Mechanic Inspection Workshop" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80'">
+              <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);padding:6px 12px;font-family:var(--font-mono);font-size:10px;color:var(--red)">AUDIT BAY BOM-01</div>
+            </div>
+          </div>
+
+          <div class="inspection-categories-grid" style="margin-top:24px">
+            <div class="inspection-bar-item">
+              <div class="inspection-bar-header">
+                <span>Engine & Drivetrain</span><span>18/18 Checks</span>
+              </div>
+              <div class="inspection-bar-track">
+                <div class="inspection-bar-fill" data-target-width="100%"></div>
+              </div>
+            </div>
+            <div class="inspection-bar-item">
+              <div class="inspection-bar-header">
+                <span>Brakes & Steering</span><span>12/12 Checks</span>
+              </div>
+              <div class="inspection-bar-track">
+                <div class="inspection-bar-fill" data-target-width="100%"></div>
+              </div>
+            </div>
+            <div class="inspection-bar-item">
+              <div class="inspection-bar-header">
+                <span>Exterior & Frame Integrity</span><span>16/16 Checks</span>
+              </div>
+              <div class="inspection-bar-track">
+                <div class="inspection-bar-fill" data-target-width="100%"></div>
+              </div>
+            </div>
+            <div class="inspection-bar-item">
+              <div class="inspection-bar-header">
+                <span>Transmission & Clutch</span><span>14/14 Checks</span>
+              </div>
+              <div class="inspection-bar-track">
+                <div class="inspection-bar-fill" data-target-width="100%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare Vehicles CTA Section with Real Photo Backdrop -->
+    <section class="section">
+      <div class="container">
+        <div class="responsive-2col compare-cta-banner" style="background:linear-gradient(180deg, rgba(20,20,19,0.85) 0%, rgba(20,20,19,0.95) 100%), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;border:1px solid var(--line-strong);padding:40px;gap:30px;align-items:center">
+          <div>
+            <div class="eyebrow">DECISION TOOL</div>
+            <h2 style="font-family:var(--font-display);font-size:clamp(26px, 5vw, 44px);text-transform:uppercase;margin:10px 0;line-height:0.95;color:var(--ink)">COMPARE UP TO 3 VEHICLES SIDE BY SIDE</h2>
+            <p style="font-size:14px;color:var(--muted);max-width:550px">Evaluate price, power output, mileage, inspection score, boot space, warranty, and estimated EMI to choose with total clarity.</p>
+          </div>
+          <div>
+            <a class="btn primary" href="compare.html">Launch Compare Tool →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- Newsletter Subscription Box -->
+      <div class="footer-newsletter-box">
+        <div>
+          <div class="footer-newsletter-title">SUBSCRIBE TO AUTORA ALERTS</div>
+          <div class="footer-newsletter-desc">Get instant notifications on newly listed pre-owned vehicles, price drops, and 96-point audit certificates.</div>
+        </div>
+        <form class="footer-newsletter-form">
+          <input type="email" class="footer-newsletter-input" placeholder="Enter your email address..." required>
+          <button type="submit" class="btn primary">Subscribe →</button>
+        </form>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand" style="display:flex;align-items:center;gap:10px;">
+            <img src="assets/images/logo.png" alt="AUTORA Logo" class="logo-img" style="height:30px;">
+            AUTORA
+          </div>
+          <div class="footer-copy">A technical marketplace for pre-owned vehicles. Built for precision, transparent inspection certifications, and direct purchasing.</div>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;margin-bottom:14px">Explore</div>
+          <div class="footer-links">
+            <a href="vehicles.html">Vehicles Inventory</a>
+            <a href="compare.html">Compare Matrix</a>
+            <a href="inspection.html">96-Point Inspection</a>
+            <a href="ourinfo.html">Our Info & Hubs</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;margin-bottom:14px">Social Logins & Account</div>
+          <div class="footer-links">
+            <a href="login.html" onclick="handleSocialAuth('Google'); return false;">Sign in with Google</a>
+            <a href="login.html" onclick="handleSocialAuth('Apple'); return false;">Sign in with Apple</a>
+            <a href="login.html" onclick="handleSocialAuth('LinkedIn'); return false;">Sign in with LinkedIn</a>
+            <a href="login.html">Account Sign In</a>
+            <a href="signup.html">Create Account</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;margin-bottom:14px">Support & Assistance</div>
+          <div class="footer-links">
+            <a href="mailto:support@autora.example">support@autora.example</a>
+            <a href="tel:+918001234567">+91 800 123 4567</a>
+            <span>Mon–Sat · 09:00 – 19:00 IST</span>
+            <a href="ourinfo.html" style="color:var(--red);margin-top:6px;font-weight:600">Contact Hub Specialists →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-bar">
+        <span>© 2026 AUTORA PLATFORM. DEMO LISTINGS.</span>
+        <a href="#" class="scroll-to-top" style="color:var(--ink);text-decoration:none;font-weight:600">↑ BACK TO TOP</a>
+        <span>FIND IT. CHECK IT. COMPARE IT. DRIVE IT.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

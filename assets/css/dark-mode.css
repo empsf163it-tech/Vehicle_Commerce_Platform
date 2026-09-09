@@ -1,6 +1,248 @@
+/* ==========================================================================
+   AUTORA — High-Contrast Dark Mode Stylesheet
+   Background #111111 | Surface #1C1C1A | Text #F5F4F0 | Accent #D94732
+   Guarantees 100% text legibility & crisp contrast across all components.
+   ========================================================================== */
 
-body.dark{--bg:#111;--ink:#f4f3ef;--muted:#aaa8a1;--panel:#1c1c1a;--line:#ffffff22}
-body.dark header{background:rgba(17,17,17,.94)}
-body.dark .vehicle{background:#191918}
-body.dark .filter{color:var(--ink)}
-body.dark .filter.active{background:var(--ink);color:#111}
+body.dark {
+  --bg: #111111;
+  --bg-card: #1C1C1A;
+  --ink: #F5F4F0;
+  --ink-secondary: #E2E0D6;
+  --muted: #C2C0B5;
+  --muted-light: #8E8C82;
+  --panel: #282825;
+  --line: rgba(255, 255, 255, 0.16);
+  --line-strong: rgba(255, 255, 255, 0.32);
+}
+
+body.dark header {
+  background: rgba(17, 17, 17, 0.96);
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Header Elements & Controls */
+body.dark .logo {
+  color: #F5F4F0;
+}
+
+body.dark .logo-mark {
+  background: #F5F4F0;
+  color: #111111;
+}
+
+body.dark .logo-mark span {
+  color: #111111;
+}
+
+body.dark .logo:hover .logo-mark {
+  background: var(--red);
+  color: #FFFFFF;
+}
+
+body.dark .logo:hover .logo-mark span {
+  color: #FFFFFF;
+}
+
+body.dark .menu a {
+  color: #E2E0D6;
+}
+
+body.dark .menu a:hover,
+body.dark .menu a.active {
+  color: var(--red);
+}
+
+body.dark .theme-toggle,
+body.dark .shortlist-badge {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #F5F4F0;
+}
+
+body.dark .shortlist-badge:hover,
+body.dark .theme-toggle:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* Form Controls, Inputs & Selects in Dark Mode */
+body.dark .search-module,
+body.dark .filter-toolbar,
+body.dark .finance-calc-card,
+body.dark .inspection-overview,
+body.dark .modal-box,
+body.dark .auth-card {
+  background: #1C1C1A;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+body.dark .form-group label,
+body.dark .search-module-title,
+body.dark .eyebrow,
+body.dark .inspection-bar-header,
+body.dark .range-slider-header {
+  color: #E2E0D6;
+}
+
+body.dark .form-group select,
+body.dark .form-group input,
+body.dark .filter-chip {
+  background: #242422;
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #F5F4F0;
+}
+
+body.dark .form-group select option {
+  background: #1C1C1A;
+  color: #F5F4F0;
+}
+
+body.dark .form-group select:focus,
+body.dark .form-group input:focus {
+  border-color: var(--red);
+}
+
+body.dark .filter-chip.active,
+body.dark .filter-chip:hover {
+  background: #F5F4F0;
+  border-color: #F5F4F0;
+  color: #111111;
+}
+
+/* Vehicle Cards in Dark Mode */
+body.dark .vehicle-card {
+  background: #1C1C1A;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+body.dark .vehicle-card-image-wrap {
+  background: linear-gradient(135deg, #30302D 0%, #151514 100%);
+}
+
+body.dark .vehicle-title {
+  color: #F5F4F0;
+}
+
+body.dark .vehicle-specs-meta,
+body.dark .vehicle-finance-estimate {
+  color: #C2C0B5;
+}
+
+body.dark .vehicle-price {
+  color: #F5F4F0;
+}
+
+body.dark .inspection-score-pill {
+  background: rgba(255, 255, 255, 0.14);
+  color: #F5F4F0;
+}
+
+body.dark .vehicle-card-footer-action {
+  color: #F5F4F0;
+}
+
+/* Detail & Gallery Page Elements */
+body.dark .thumb-item {
+  background: #262624;
+  color: #F5F4F0;
+}
+
+body.dark .thumb-item.active {
+  border-color: var(--red);
+}
+
+body.dark .gallery-stage {
+  background: linear-gradient(135deg, #30302D 0%, #141413 100%);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+body.dark .spec-cell span {
+  color: #C2C0B5;
+}
+
+body.dark .spec-cell strong {
+  color: #F5F4F0;
+}
+
+/* Sticky Action Bar in Dark Mode */
+body.dark .sticky-buy-bar {
+  background: #0D0D0C;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Comparison Matrix in Dark Mode */
+body.dark .compare-table {
+  background: #151514;
+}
+
+body.dark .compare-table th {
+  background: #0A0A0A;
+  color: #F5F4F0;
+  border-bottom-color: rgba(255, 255, 255, 0.22);
+}
+
+body.dark .compare-table td {
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+  color: #F5F4F0;
+}
+
+body.dark .compare-table td:first-child {
+  background: #151514;
+  color: #E2E0D6;
+}
+
+/* Buttons in Dark Mode */
+body.dark .btn:not(.primary) {
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #F5F4F0;
+  background: transparent;
+}
+
+body.dark .btn:not(.primary):hover {
+  background: #F5F4F0;
+  border-color: #F5F4F0;
+  color: #111111;
+}
+
+body.dark .btn.primary {
+  background: var(--red);
+  border-color: var(--red);
+  color: #FFFFFF;
+}
+
+body.dark .btn.primary:hover {
+  background: var(--red-hover);
+  border-color: var(--red-hover);
+  color: #FFFFFF;
+}
+
+/* Modal Drawer & Cards */
+body.dark .mobile-menu-drawer {
+  background: #111111;
+  border-left-color: rgba(255, 255, 255, 0.16);
+}
+
+body.dark .mobile-menu-links a {
+  color: #F5F4F0;
+}
+
+body.dark .reference-code-box {
+  background: #282825;
+  color: #F5F4F0;
+}
+
+/* Footer in Dark Mode */
+body.dark footer {
+  background: #0D0D0C;
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+body.dark .footer-brand {
+  color: #F5F4F0;
+}
+
+body.dark .footer-copy,
+body.dark .footer-links,
+body.dark .copyright-bar {
+  color: #C2C0B5;
+}
