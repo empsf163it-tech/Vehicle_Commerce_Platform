@@ -1,0 +1,6 @@
+
+body.dark{--bg:#111;--ink:#f4f3ef;--muted:#aaa8a1;--panel:#1c1c1a;--line:#ffffff22}
+body.dark header{background:rgba(17,17,17,.94)}
+body.dark .vehicle{background:#191918}
+body.dark .filter{color:var(--ink)}
+body.dark .filter.active{background:var(--ink);color:#111}
